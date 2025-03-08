@@ -38,6 +38,7 @@ button {
     font-size: 1rem;
     background: var(--highlight);
     @apply font-semibold rounded px-2 py-2 text-white;
+    cursor: pointer;
 }
 input {
     font-size: 1rem;
@@ -112,4 +113,13 @@ header {
 }
 .error {
     color: var(--highlight);
+}
+.pagination-links {
+    p{
+        color: var(--primary) !important;
+    }
+    button {
+        @apply font-normal px-3 py-2 ;
+    }
+
 }

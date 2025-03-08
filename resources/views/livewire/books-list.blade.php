@@ -26,4 +26,8 @@
         @endforeach
 
     </ul>
+    <div class="pagination-links">
+        {{$books->links(data: ['scrollTo' => false])}}
+    </div>
+
 </div>
