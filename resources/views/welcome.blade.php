@@ -9,7 +9,7 @@
     </head>
     <body >
         <main>
-            <h2> Welcome to Book Review!</h2>
+            <livewire:books-list/>
         </main>
     </body>
 </html>
