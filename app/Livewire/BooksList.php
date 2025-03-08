@@ -14,4 +14,8 @@ class BooksList extends Component
         ]);
     }
 
+    public function deleteBook(Book $book){
+        $book->delete();
+    }
+
 }
