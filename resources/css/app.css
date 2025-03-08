@@ -92,7 +92,7 @@ header {
         @apply my-1;
     }
     button {
-        @apply float-end py-1;
+        @apply float-end py-1 ml-2;
     }
 }
 

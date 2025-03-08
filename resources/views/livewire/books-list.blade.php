@@ -17,6 +17,7 @@
     <ul class="list">
         @foreach($books as $book)
             <li wire:key="{{$book->id}}" >
+                <button wire:navigate href="{{route('books.edit',$book->id)}}"  class="cursor-pointer">Edit</button>
                 <button wire:click="deleteBook({{$book->id}})" class="cursor-pointer">delete</button>
                 <h3>{{$book->title}}</h3>
                 <h4>{{$book->author}}</h4>
