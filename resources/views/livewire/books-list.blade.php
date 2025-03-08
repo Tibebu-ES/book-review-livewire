@@ -6,6 +6,14 @@
         </div>
     </header>
 
+    {{--Search books--}}
+    <input
+        type="text"
+        wire:model.live.debounce.300ms="search"
+        class="search"
+        placeholder="Search for books ..."
+    />
+
     <ul class="list">
         @foreach($books as $book)
             <li wire:key="{{$book->id}}" >

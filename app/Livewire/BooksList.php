@@ -8,11 +8,17 @@ use Livewire\Component;
 
 class BooksList extends Component
 {
+    public string $search = '';
+
     #[Title('Books List - Livewire')]
     public function render()
     {
+        $books = $this->search ?
+            Book::where("title","LIKE", "%{$this->search}%")->get()->sortByDesc('created_at') :
+            Book::all()->sortByDesc('created_at');
+
         return view('livewire.books-list',[
-            'books' => Book::all()->sortByDesc('created_at')
+            'books' => $books
         ]);
     }
 
