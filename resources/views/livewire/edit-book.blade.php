@@ -25,6 +25,20 @@
             @enderror
         </div>
 
+        <div class="field">
+            <label>Cover Photo:</label>
+            <input wire:model="coverPhoto" type="file" />
+            {{--preview--}}
+            @if ($coverPhoto)
+                <img src="{{ $coverPhoto->temporaryUrl() }}" class="h-32 object-cover rounded-md">
+            @elseif($coverPhotoUrl)
+                <img src="{{ asset('storage/'.$coverPhotoUrl) }}" class="h-32 object-cover rounded-md">
+            @endif
+            @error('coverPhoto')
+            <div class="error"> {{$message}}</div>
+            @enderror
+        </div>
+
         <button class="cursor-pointer">Edit Book</button>
         <button wire:navigate href="{{route('books.index')}}" class="cursor-pointer">Cancel</button>
 
