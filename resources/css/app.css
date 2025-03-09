@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -69,7 +70,7 @@ main {
     @apply max-w-7xl p-4 m-auto;
 }
 .search {
-    @apply mb-7 mt-4 w-96 mx-auto block;
+    @apply mb-7 mt-4 w-1/2 mx-auto block;
 }
 
 /* book list page */
@@ -84,6 +85,10 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 
     li {
         background: var(--dark);
@@ -95,6 +100,7 @@ header {
     button {
         @apply float-end py-1 ml-2;
     }
+
 }
 
 /* create page */
@@ -123,3 +129,5 @@ header {
     }
 
 }
+
+
