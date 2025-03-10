@@ -23,7 +23,11 @@
 
                 <div class="grow">
                     <button wire:navigate href="{{route('books.edit',$book->id)}}"  class="cursor-pointer"><i class="fas fa-edit" ></i></button>
-                    <button wire:click="deleteBook({{$book->id}})" class="cursor-pointer"><i class="fas fa-trash" ></i></button>
+                    <button
+                        wire:click="deleteBook({{$book->id}})"
+                        wire:confirm="Are you sure you want to delete this Book?"
+                        class="cursor-pointer"
+                    ><i class="fas fa-trash" ></i></button>
                     <h3>{{$book->title}}</h3>
                     <h4>{{$book->author}}</h4>
                     <p>Rating: {{$book->rating}}/10</p>
